@@ -1,0 +1,15 @@
+<p>home works!</p>
+
+<div *ngIf="role === 'user'">
+  <p>the user account</p>
+</div>
+<div *ngIf="role === 'admin'">
+  <p>the admin account</p>
+</div>
+<div *ngIf="role === 'superadmin'">
+  <p>the super user account</p>
+</div>
+
+<div class="logout w-100">
+  <button class="btn btn-danger" (click)="logout()">Logout</button>
+</div>

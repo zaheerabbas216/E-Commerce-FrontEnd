@@ -1,0 +1,55 @@
+<div class="signupdiv">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="pt-5">
+        <img
+          src="../../../assets/signupBanner.jpg"
+          alt=""
+          class="signupBanner"
+        />
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="card p-5 mt-5">
+        <h4>Signup Here!</h4>
+        <form class="form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+          <label for="username">Username</label>
+          <input
+            type="text"
+            name="username"
+            id=""
+            placeholder="enter your username"
+            formControlName="username"
+            class="inp"
+          />
+          <label for="email">Email</label>
+          <input
+            type="text"
+            name="email"
+            id=""
+            placeholder="enter your email"
+            formControlName="email"
+            class="inp"
+          />
+          <label for="password">Password</label>
+          <input
+            type="text"
+            name="password"
+            id=""
+            placeholder="enter your password"
+            formControlName="password"
+            class="inp"
+          />
+
+          <button class="btn btn-success w-50 mt-4" type="submit">
+            Sign Up
+          </button>
+        </form>
+
+        <p class="mt-4 signupLink text-success" (click)="gotoLogin()">
+          Already have an account? Please login here!
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
