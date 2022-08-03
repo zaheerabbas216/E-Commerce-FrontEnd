@@ -2,3 +2,13 @@
 
 /* Importing Bootstrap SCSS file. */
 @import '~bootstrap/scss/bootstrap';
+
+.spinner{
+    width: 20px;
+    height: 20px;
+
+}
+
+.bs-popover-bottom{
+    transform: translate(1060px, 47px) !important;
+}

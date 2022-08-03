@@ -11,8 +11,8 @@ import { AppbarComponent } from './widgets/appbar/appbar.component';
 import { FooterComponent } from './widgets/footer/footer.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClient, HttpClientModule, HttpHeaders } from '@angular/common/http';
-
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NotificationsComponent } from './components/notifications/notifications.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,11 +20,13 @@ import { HttpClient, HttpClientModule, HttpHeaders } from '@angular/common/http'
     SignupComponent,
     HomeComponent,
     AppbarComponent,
-    FooterComponent
+    FooterComponent,
+    NotificationsComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    BrowserAnimationsModule,
     HttpClientModule,
     ReactiveFormsModule,
     AppRoutingModule,

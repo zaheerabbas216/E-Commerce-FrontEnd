@@ -29,4 +29,76 @@
       </li>
     </ul>
   </div>
+
+  <div class="becomeSeller" *ngIf="role === 'user'">
+    <ng-container *ngIf="!isReqSent">
+      <p class="mb-0" (click)="open(content)">
+        <i>become a seller</i>
+      </p></ng-container
+    >
+    <ng-container *ngIf="isReqSent">
+      <p class="mb-0">
+        <i>requested</i>
+      </p></ng-container
+    >
+  </div>
+  <div class="notifications" *ngIf="role === 'superadmin'">
+    <img
+      src="../../../assets/notify.png"
+      alt=""
+      class="notify"
+      (click)="gotoNotifications()"
+    />
+  </div>
 </nav>
+
+<!-- seller modal -->
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Want to become a seller?</h4>
+  </div>
+  <div class="modal-body">
+    <p class="text-info mb-0">
+      Fill out the form with the details and we will approve it in no time
+    </p>
+    <form class="formdiv d-flex flex-column" [formGroup]="requestForm">
+      <div class="mb-3">
+        <div class="input-group">
+          <label for="category">Category</label>
+          <input
+            type="text"
+            class="inp"
+            placeholder="Category of product"
+            formControlName="category"
+          />
+          <label for="description">Description</label>
+          <textarea
+            name=""
+            id=""
+            cols="30"
+            rows="10"
+            class="desc"
+            formControlName="desc"
+          >
+          </textarea>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button
+      type="button"
+      class="btn btn-danger"
+      (click)="modal.dismiss('Cross click')"
+    >
+      Close
+    </button>
+    <button
+      type="button"
+      class="btn btn-success text-light"
+      (click)="becomeSeller()"
+    >
+      Request
+    </button>
+  </div>
+</ng-template>

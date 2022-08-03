@@ -27,7 +27,16 @@
           class="inp"
         />
 
-        <button class="btn btn-success w-50 mt-4" type="submit">Login</button>
+        <button
+          class="btn btn-success w-50 mt-4"
+          type="submit"
+          [disabled]="isLoading"
+        >
+          <ng-container *ngIf="isLoading">
+            <img class="spinner" src="../../../assets/spinner.gif" alt="" />
+          </ng-container>
+          Login
+        </button>
       </form>
 
       <p class="mt-4 signupLink text-success" (click)="gotoSignup()">

@@ -1,0 +1,71 @@
+<div class="notificationSection">
+  <h4>Notifications List</h4>
+  <p (click)="gotoHome()">back</p>
+</div>
+
+<div class="list">
+  <div class="card p-3">
+    <table>
+      <th>Email</th>
+      <th>Role</th>
+      <th>Category</th>
+      <th>Description</th>
+      <th>Request Status</th>
+      <th>Request Action</th>
+      <tr *ngFor="let req of allRequests">
+        <td>{{ req.email }}</td>
+        <td>{{ req.role }}</td>
+        <td>{{ req.category }}</td>
+        <td>{{ req.desc }}</td>
+        <td>{{ req.reqestStatus }}</td>
+        <td>{{ req.requestAction }}</td>
+        <td>
+          <p class="text-danger viewReq" (click)="open(content, req)">view</p>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+<!-- modal to view the request -->
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">View Request</h4>
+    <!-- <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button> -->
+  </div>
+  <div class="modal-body">
+    <table>
+      <th>Category</th>
+      <th>Description</th>
+      <th>Request Status</th>
+      <th>Request Action</th>
+      <th>Change</th>
+      <tr>
+        <td>{{ clickedReqData.category }}</td>
+        <td>{{ clickedReqData.desc }}</td>
+        <td>{{ clickedReqData.reqestStatus }}</td>
+        <td>{{ clickedReqData.requestAction }}</td>
+        <td>
+          <button class="btn btn-danger m-1">Status</button>
+          <button class="btn btn-info m-1">Action</button>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <div class="modal-footer">
+    <button
+      type="button"
+      class="btn btn-danger"
+      (click)="modal.dismiss('Cross click')"
+    >
+      Close
+    </button>
+    <button
+      type="button"
+      class="btn btn-outline-dark"
+      (click)="modal.close('Save click')"
+    >
+      Save
+    </button>
+  </div>
+</ng-template>

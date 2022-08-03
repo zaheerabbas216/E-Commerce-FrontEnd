@@ -1,0 +1,33 @@
+.becomeSeller{
+    color: #FFB100;
+    cursor: pointer;
+    
+}
+
+.notify{
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.formdiv{
+    .input-group{
+          display: flex;
+    flex-direction: column;
+    width: 100%;
+    }
+  
+}
+
+.inp{
+    border: 1px solid #f3f3f3;
+    height: 40px;
+    outline: none;
+}
+
+.desc{
+    width: 100%;
+    height: 100px;
+    outline: none;
+    border: 1px solid #f3f3f3;
+}
